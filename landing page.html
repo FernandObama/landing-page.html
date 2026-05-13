@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUIZO | Landing Page</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #050505;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(0,255,170,0.15), transparent 70%);
+      top: -200px;
+      right: -150px;
+      z-index: -1;
+    }
+
+    header {
+      width: 100%;
+      padding: 25px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(12px);
+      background: rgba(5, 5, 5, 0.7);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #00ffaa;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #d1d5db;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ffaa;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 8%;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero-content span {
+      color: #00ffaa;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+
+    .hero-content h1 {
+      font-size: 80px;
+      line-height: 1;
+      margin-top: 20px;
+      margin-bottom: 25px;
+      font-weight: 800;
+    }
+
+    .hero-content p {
+      font-size: 20px;
+      color: #9ca3af;
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 15px 30px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: #00ffaa;
+      color: #050505;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,255,170,0.2);
+    }
+
+    .btn-secondary {
+      border-color: rgba(255,255,255,0.15);
+      color: white;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .btn-secondary:hover {
+      border-color: #00ffaa;
+      color: #00ffaa;
+    }
+
+    .about {
+      padding: 120px 8%;
+    }
+
+    .section-title {
+      font-size: 42px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .section-text {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+      color: #9ca3af;
+      line-height: 1.8;
+      font-size: 18px;
+    }
+
+    .socials {
+      padding: 120px 8%;
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 50px;
+    }
+
+    .social-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 35px;
+      border-radius: 24px;
+      transition: 0.3s;
+    }
+
+    .social-card:hover {
+      transform: translateY(-10px);
+      border-color: #00ffaa;
+    }
+
+    .social-card h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .social-card p {
+      color: #9ca3af;
+      margin-bottom: 25px;
+      line-height: 1.7;
+    }
+
+    .social-card a {
+      text-decoration: none;
+      color: #00ffaa;
+      font-weight: 600;
+    }
+
+    footer {
+      padding: 40px;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      color: #6b7280;
+    }
+
+    @media(max-width: 900px) {
+      .hero-content h1 {
+        font-size: 52px;
+      }
+
+      .hero-content p {
+        font-size: 18px;
+      }
+
+      nav {
+        display: none;
+      }
+    }
+
+    @media(max-width: 600px) {
+      .hero-content h1 {
+        font-size: 42px;
+      }
+
+      .section-title {
+        font-size: 34px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">LUIZO</div>
+
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#social">Links</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <span>DESENVOLVEDOR • CRIADOR • GAMER</span>
+
+      <h1>
+        Criando experiências modernas para a internet.
+      </h1>
+
+      <p>
+        Minha primeira Landing Page
+      </p>
+
+      <div class="buttons">
+        <a href="https://instagram.com/luizo.py" target="_blank" class="btn btn-primary">
+          Meu Instagram
+        </a>
+
+        <a href="#social" class="btn btn-secondary">
+          Ver Contatos
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="sobre">
+    <h2 class="section-title">Sobre Mim</h2>
+
+    <p class="section-text">
+      Olá, eu sou Luiz Eduardo. Desenvolvedor apaixonado por tecnologia,
+      design moderno e experiências digitais minimalistas.
+      Esta página foi criada para apresentar minhas redes,
+      contato e perfil gamer de maneira elegante e profissional.
+    </p>
+  </section>
+
+  <section class="socials" id="social">
+    <h2 class="section-title">Meus Links</h2>
+
+    <div class="social-grid">
+
+      <div class="social-card">
+        <h3>Instagram</h3>
+
+        <p>
+          Instagram.
+        </p>
+
+        <a href="https://instagram.com/luizo.py" target="_blank">
+          instagram.com/luizo.py
+        </a>
+      </div>
+
+      <div class="social-card">
+        <h3>Contato</h3>
+
+        <p>
+          Email.
+        </p>
+
+        <a href="mailto:luilzeduardofragarocha@hotmail.com">
+          luilzeduardofragarocha@hotmail.com
+        </a>
+      </div>
+
+      <div class="social-card">
+        <h3>Steam</h3>
+
+        <p>
+          Steam.
+        </p>
+
+        <a href="https://steamcommunity.com/profiles/76561198980198694/" target="_blank">
+          steamcommunity.com/id/LUIZOALGUMACOISA
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    © 2026 LUIZO — Todos os direitos reservados.
+  </footer>
+
+</body>
+</html>
